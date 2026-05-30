@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --font-display: "Cinzel", Georgia, serif;
-  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-title: "Cherry Bomb One", system-ui, sans-serif;
+  --font-tagline: "Fraunces", Georgia, serif;
+  --font-body: "Comfortaa", system-ui, sans-serif;
+  --font-button: "Comfortaa", system-ui, sans-serif;
 }
 
 html,
@@ -14,6 +16,132 @@ body {
 
 body {
   font-family: var(--font-body);
-  background: #0a0a0f;
-  color: #f5f0e6;
+  background: #061a10;
+  color: #f0fff4;
+}
+
+/* ——— App-wide: magic · cute · absurd · green ——— */
+.ritual-app__bg {
+  background:
+    radial-gradient(ellipse 90% 60% at 15% 10%, rgba(181, 255, 197, 0.45), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 25%, rgba(116, 255, 168, 0.25), transparent 50%),
+    radial-gradient(ellipse 80% 55% at 50% 100%, rgba(27, 94, 58, 0.9), transparent 60%),
+    linear-gradient(
+      168deg,
+      #061a10 0%,
+      #0d3321 28%,
+      #1b5e3a 52%,
+      #2d8a5c 78%,
+      #52b788 100%
+    );
+}
+
+.ritual-app__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(48px);
+  opacity: 0.55;
+  animation: ritual-float 9s ease-in-out infinite;
+}
+
+.ritual-app__orb--a {
+  top: 8%;
+  left: -5%;
+  width: 220px;
+  height: 220px;
+  background: #95ff9a;
+}
+
+.ritual-app__orb--b {
+  top: 42%;
+  right: -8%;
+  width: 280px;
+  height: 280px;
+  background: #b8ffb8;
+  animation-delay: -3s;
+  animation-duration: 11s;
+}
+
+.ritual-app__orb--c {
+  bottom: 5%;
+  left: 28%;
+  width: 200px;
+  height: 200px;
+  background: #74c69d;
+  animation-delay: -5s;
+  animation-duration: 13s;
+}
+
+.ritual-app__sparkles {
+  background-image:
+    radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 78% 18%, rgba(255, 240, 180, 0.85) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 44% 68%, rgba(255, 255, 255, 0.75) 0 1px, transparent 2px),
+    radial-gradient(circle at 88% 72%, rgba(200, 255, 210, 0.9) 0 1px, transparent 2px),
+    radial-gradient(circle at 24% 82%, rgba(255, 200, 255, 0.7) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 62% 38%, rgba(255, 255, 255, 0.8) 0 1px, transparent 2px);
+  opacity: 0.7;
+  animation: ritual-sparkle 4s ease-in-out infinite alternate;
+}
+
+.text-title {
+  font-family: var(--font-title);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  color: #e8ffef;
+  text-shadow:
+    0 0 40px rgba(149, 255, 170, 0.45),
+    2px 3px 0 rgba(27, 94, 58, 0.35);
+}
+
+.text-tagline {
+  font-family: var(--font-tagline);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #d8ffe4;
+  text-shadow: 0 2px 24px rgba(0, 40, 20, 0.35);
+}
+
+.text-subtitle {
+  font-family: var(--font-body);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #b7f5c8;
+  letter-spacing: 0.02em;
+}
+
+.text-section-label {
+  font-family: var(--font-tagline);
+  font-style: italic;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b7f5c8;
+}
+
+.panel-glass {
+  border: 1px solid rgba(149, 255, 154, 0.35);
+  background: rgba(13, 51, 33, 0.72);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 40px rgba(149, 255, 170, 0.12);
+}
+
+@keyframes ritual-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(12px, -18px) scale(1.06);
+  }
+}
+
+@keyframes ritual-sparkle {
+  from {
+    opacity: 0.45;
+  }
+  to {
+    opacity: 0.85;
+  }
 }

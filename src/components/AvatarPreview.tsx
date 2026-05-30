@@ -14,7 +14,7 @@ type Props = {
 export function AvatarPreview({ selection, className = "" }: Props) {
   return (
     <div
-      className={`relative aspect-square w-full max-w-md overflow-hidden rounded-lg border border-ritual-accentDim bg-ritual-panel shadow-[0_0_60px_rgba(201,162,39,0.12)] ${className}`}
+      className={`relative aspect-square w-full max-w-md overflow-hidden rounded-2xl border-2 border-ritual-accent/50 bg-ritual-panel shadow-ritual-soft ${className}`}
     >
       {LAYER_ORDER.map((cat) => {
         const src = resolveAssetSrc(cat, selection[cat]);
@@ -35,7 +35,7 @@ export function AvatarPreview({ selection, className = "" }: Props) {
         );
       })}
       <span
-        className="pointer-events-none absolute inset-0 border border-ritual-accent/20"
+        className="pointer-events-none absolute inset-0 rounded-2xl border border-ritual-glow/30"
         aria-hidden
       />
     </div>

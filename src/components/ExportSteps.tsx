@@ -114,7 +114,7 @@ export function ExportSteps({ selection, onDownloadComplete }: Props) {
           >
             {walletLabel}
           </RitualButton>
-          <p className="mt-2 text-center text-xs text-ritual-muted">
+          <p className="text-subtitle mt-2 text-center text-xs">
             {useDemoMint
               ? "Mode demo: hubungkan wallet lalu tekan lagi untuk lanjut."
               : `Mint NFT — biaya ${MINT_PRICE_ETH} ETH`}
@@ -131,7 +131,7 @@ export function ExportSteps({ selection, onDownloadComplete }: Props) {
           >
             FOLLOW
           </RitualButton>
-          <p className="mt-2 text-center text-xs text-ritual-muted">
+          <p className="text-subtitle mt-2 text-center text-xs">
             Ikuti tim RITWHUAL di X
           </p>
         </li>
@@ -146,7 +146,7 @@ export function ExportSteps({ selection, onDownloadComplete }: Props) {
           >
             {downloading ? "MENYIMPAN..." : "DOWNLOAD"}
           </RitualButton>
-          <p className="mt-2 text-center text-xs text-ritual-muted">
+          <p className="text-subtitle mt-2 text-center text-xs">
             Unduh PNG 1:1 (1024×1024)
           </p>
         </li>

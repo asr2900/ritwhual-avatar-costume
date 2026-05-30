@@ -20,7 +20,7 @@ export async function composeAvatarPng(
   const ctx = canvas.getContext("2d");
   if (!ctx) throw new Error("Canvas tidak tersedia");
 
-  ctx.fillStyle = "#0a0a0f";
+  ctx.fillStyle = "#061a10";
   ctx.fillRect(0, 0, size, size);
 
   for (const src of layerSrcs) {

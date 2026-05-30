@@ -2,6 +2,10 @@ export const SITE = {
   title: "RITWHUAL AVATAR COSTUME",
   tagline: "Craft your 1:1 avatar costume",
   avatarSize: 1024,
+  home: {
+    tagline: "Create a way for the world to see you",
+    subtitle: "Start creating your story here",
+  },
 } as const;
 
 export const TWITTER_HANDLE =

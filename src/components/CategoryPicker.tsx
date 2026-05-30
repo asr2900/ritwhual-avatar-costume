@@ -20,10 +20,8 @@ export function CategoryPicker({
 
   return (
     <section className="space-y-2">
-      <p className="font-display text-xs tracking-[0.25em] text-ritual-muted uppercase">
-        {label}
-      </p>
-      <ul className="flex flex-wrap gap-2 list-none p-0 m-0">
+      <p className="text-section-label">{label}</p>
+      <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
         {items.map((item) => {
           const active = selection[category] === item.id;
           return (
@@ -31,10 +29,10 @@ export function CategoryPicker({
               <button
                 type="button"
                 onClick={() => onChange(category, item.id)}
-                className={`rounded border px-3 py-2 text-xs transition-colors ${
+                className={`font-body rounded-xl border px-3 py-2 text-xs font-semibold transition-all ${
                   active
-                    ? "border-ritual-accent bg-ritual-accent/15 text-ritual-accent"
-                    : "border-ritual-accentDim/50 text-ritual-muted hover:border-ritual-accent"
+                    ? "border-ritual-accent bg-ritual-accent/20 text-ritual-accent shadow-ritual-soft"
+                    : "border-ritual-accentDim/50 text-ritual-muted hover:border-ritual-accent hover:text-ritual-text"
                 }`}
               >
                 {item.label}

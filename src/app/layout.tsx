@@ -1,21 +1,28 @@
 import type { Metadata } from "next";
-import { Cinzel, DM_Sans } from "next/font/google";
+import { Cherry_Bomb_One, Comfortaa, Fraunces } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
-const display = Cinzel({
+const titleFont = Cherry_Bomb_One({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-title",
 });
 
-const body = DM_Sans({
+const taglineFont = Fraunces({
+  subsets: ["latin"],
+  style: ["italic", "normal"],
+  variable: "--font-tagline",
+});
+
+const bodyFont = Comfortaa({
   subsets: ["latin"],
   variable: "--font-body",
 });
 
 export const metadata: Metadata = {
   title: "RITWHUAL AVATAR COSTUME",
-  description: "Craft your 1:1 avatar costume — skin, hair, clothes, background, accessories.",
+  description: "Create a way for the world to see you — craft your 1:1 avatar costume.",
 };
 
 export default function RootLayout({
@@ -24,8 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${display.variable} ${body.variable}`}>
-      <body className="antialiased">
+    <html
+      lang="id"
+      className={`${titleFont.variable} ${taglineFont.variable} ${bodyFont.variable}`}
+    >
+      <body className="font-body antialiased">
         <Providers>{children}</Providers>
       </body>
     </html>
