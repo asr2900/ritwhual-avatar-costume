@@ -9,13 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.62.8",
     "next": "^15.1.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "viem": "^2.21.54",
-    "wagmi": "^2.14.6",
-    "@rainbow-me/rainbowkit": "^2.2.1"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
