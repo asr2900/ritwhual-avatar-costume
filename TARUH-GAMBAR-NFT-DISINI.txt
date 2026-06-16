@@ -1,0 +1,41 @@
+╔══════════════════════════════════════════════════════════════╗
+║  LOKASI FOLDER GAMBAR NFT (KOLEKSI)                         ║
+╚══════════════════════════════════════════════════════════════╝
+
+Proyek Anda ada di folder ini:
+
+  C:\Users\asrat\.cursor\projects\empty-window\ritwhual-avatar-costume
+
+Gambar NFT taruh di subfolder:
+
+  C:\Users\asrat\.cursor\projects\empty-window\ritwhual-avatar-costume\public\collection
+
+──────────────────────────────────────────────────────────────
+
+CARA BUKA DI CURSOR (sidebar kiri):
+
+  1. Pastikan folder yang terbuka = ritwhual-avatar-costume
+     (bukan folder "empty-window" saja)
+
+  2. Klik panah ▶ di samping folder "public"
+
+  3. Klik folder "collection"
+
+  4. Taruh file: nft-01.png, nft-02.png, nft-03.png, nft-04.png
+
+──────────────────────────────────────────────────────────────
+
+CARA BUKA DI FILE EXPLORER (Windows):
+
+  1. Tekan Win + E
+  2. Tempel path ini di address bar:
+
+     C:\Users\asrat\.cursor\projects\empty-window\ritwhual-avatar-costume\public\collection
+
+  3. Enter — drag & drop gambar NFT Anda ke sana
+
+──────────────────────────────────────────────────────────────
+
+Edit judul/deskripsi di:  src\config\content.ts
+
+Petunjuk lengkap juga ada di:  public\collection\BACA-SAYA.txt

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Cherry_Bomb_One, Comfortaa, Fraunces } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
 
 const titleFont = Cherry_Bomb_One({
   weight: "400",
@@ -21,8 +20,14 @@ const bodyFont = Comfortaa({
 });
 
 export const metadata: Metadata = {
-  title: "RITWHUAL AVATAR COSTUME",
-  description: "Create a way for the world to see you — craft your 1:1 avatar costume.",
+  title: "CokkaNFT | Your Digital Identity, Your Magic.",
+  description:
+    "CokkaNFT — cute, absurd, magical digital identity on-chain. Explore the collection and join the community.",
+  openGraph: {
+    title: "CokkaNFT",
+    description: "Your Digital Identity, Your Magic.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
@@ -35,9 +40,7 @@ export default function RootLayout({
       lang="id"
       className={`${titleFont.variable} ${taglineFont.variable} ${bodyFont.variable}`}
     >
-      <body className="font-body antialiased">
-        <Providers>{children}</Providers>
-      </body>
+      <body className="font-body antialiased">{children}</body>
     </html>
   );
 }

@@ -1,0 +1,38 @@
+═══════════════════════════════════════════════════════════════
+  FOLDER KOLEKSI NFT — taruh gambar Anda di sini
+═══════════════════════════════════════════════════════════════
+
+LOKASI FOLDER INI (di komputer Anda):
+
+  C:\Users\asrat\.cursor\projects\empty-window\ritwhual-avatar-costume\public\collection
+
+Di Cursor / VS Code, buka sidebar kiri:
+  ritwhual-avatar-costume  →  public  →  collection   ← folder ini
+
+───────────────────────────────────────────────────────────────
+CARA MENAMBAHKAN GAMBAR (4 karya)
+───────────────────────────────────────────────────────────────
+
+1. Copy file gambar NFT Anda ke folder ini.
+
+2. Rename (atau simpan) dengan nama:
+     nft-01.png
+     nft-02.png
+     nft-03.png
+     nft-04.png
+
+   Boleh juga .jpg — tapi ubah ekstensi di src/config/content.ts
+   misalnya: image: "/collection/nft-01.jpg"
+
+3. Edit judul & deskripsi di:
+     src/config/content.ts  →  COLLECTION.items
+
+4. Simpan file, refresh browser (npm run dev harus jalan).
+
+───────────────────────────────────────────────────────────────
+CATATAN
+───────────────────────────────────────────────────────────────
+
+• Ukuran disarankan: persegi 1:1 (mis. 1024×1024 px)
+• Saat ini ada file placeholder nft-01 s/d nft-04 (copy logo)
+  — ganti dengan gambar NFT asli Anda

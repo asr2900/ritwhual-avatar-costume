@@ -9,6 +9,10 @@
   --font-button: "Comfortaa", system-ui, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   min-height: 100%;

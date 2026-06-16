@@ -1,5 +1,5 @@
-import { RitualApp } from "@/components/RitualApp";
+import { LandingPage } from "@/components/LandingPage";
 
 export default function Home() {
-  return <RitualApp />;
+  return <LandingPage />;
 }
