@@ -164,6 +164,56 @@ body {
   background: rgba(149, 255, 154, 0.1);
 }
 
+.magic-lab-panel {
+  box-shadow: 0 0 60px rgba(149, 255, 170, 0.15);
+}
+
+.magic-lab-tabs {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.magic-lab-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.magic-lab-tab {
+  font-family: var(--font-body);
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+}
+
+.magic-lab-tab--active {
+  border-bottom-color: #95ff9a;
+  background: rgba(149, 255, 154, 0.08);
+}
+
+.magic-lab-option {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.magic-lab-option__frame {
+  border-color: rgba(149, 255, 154, 0.25);
+  background: rgba(6, 26, 16, 0.5);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.magic-lab-option:hover .magic-lab-option__frame {
+  border-color: rgba(149, 255, 154, 0.55);
+}
+
+.magic-lab-option--selected .magic-lab-option__frame {
+  border-color: #95ff9a;
+  box-shadow: 0 0 16px rgba(149, 255, 154, 0.35);
+}
+
+.magic-lab-option--selected .magic-lab-option__label {
+  color: #95ff9a;
+}
+
 @keyframes ritual-float {
   0%,
   100% {

@@ -24,7 +24,7 @@ export async function composeMagicPng(
   ctx.fillRect(0, 0, size, size);
 
   for (const src of layerSrcs) {
-    if (src.includes("acc-none.")) continue;
+    if (src.includes("-none.")) continue;
     try {
       const img = await loadImage(src);
       ctx.drawImage(img, 0, 0, size, size);
