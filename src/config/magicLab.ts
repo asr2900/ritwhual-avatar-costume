@@ -8,7 +8,14 @@ export type LayerAsset = {
 
 /**
  * Layer PNG/SVG untuk Create Your Magic.
- * Taruh file di: public/magic-lab/layers/<kategori>/
+ *
+ * SIMPAN FILE DI:
+ *   public/magic-lab/layers/<kategori>/
+ *
+ * DAFTAR DI:
+ *   MAGIC_LAB_CATALOG di bawah
+ *
+ * Petunjuk lengkap: public/magic-lab/layers/CARA-TAMBAH-GAMBAR.txt
  */
 export const MAGIC_LAB_CATALOG: Record<MagicLayerCategory, LayerAsset[]> = {
   skin: [

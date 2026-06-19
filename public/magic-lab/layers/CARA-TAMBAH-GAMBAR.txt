@@ -1,0 +1,65 @@
+══════════════════════════════════════════════════════════════
+  CARA MENAMBAH GAMBAR LAYER (Create Your Magic)
+══════════════════════════════════════════════════════════════
+
+LOKASI FOLDER (di PC Anda):
+
+  C:\Users\asrat\.cursor\projects\empty-window\ritwhual-avatar-costume\public\magic-lab\layers
+
+Di Cursor:  ritwhual-avatar-costume → public → magic-lab → layers
+
+──────────────────────────────────────────────────────────────
+STRUKTUR PER PART (6 kategori)
+──────────────────────────────────────────────────────────────
+
+  layers/
+    skin/          ← kulit / badan
+    clothes/       ← baju
+    glasses/       ← kacamata  (glasses-none = tanpa)
+    hat/           ← topi / rambut  (hat-none = tanpa)
+    background/    ← latar
+    sticker/       ← aksesoris / stiker  (sticker-none = tanpa)
+
+──────────────────────────────────────────────────────────────
+ATURAN PENAMAAN FILE
+──────────────────────────────────────────────────────────────
+
+  • Format: PNG atau SVG, ukuran 1024×1024 px (persegi)
+  • Background transparan (kecuali background)
+  • Gunakan nama konsisten, contoh:
+
+    skin/skin-01.png
+    skin/skin-02.png
+    skin/skin-05.png   ← boleh 5, 10, 20+ file
+
+  • Untuk "tanpa layer" (glasses/hat/sticker):
+    glasses/glasses-none.png
+    hat/hat-none.png
+    sticker/sticker-none.png  (file kosong/transparan)
+
+──────────────────────────────────────────────────────────────
+SETELAH MENYIMPAN FILE — daftarkan di kode
+──────────────────────────────────────────────────────────────
+
+  Buka:  src/config/magicLab.ts
+  Tambah entri di MAGIC_LAB_CATALOG, contoh:
+
+    skin: [
+      { id: "skin-04", label: "Tone IV", src: "/magic-lab/layers/skin/skin-04.png" },
+    ],
+
+  • id     = unik, huruf-kecil-tanpa-spasi
+  • label  = teks di UI
+  • src    = path dari folder public (awali dengan /magic-lab/...)
+
+  Simpan → refresh browser. Jika 5+ gambar, scroll vertikal
+  otomatis muncul di panel kanan.
+
+──────────────────────────────────────────────────────────────
+URUTAN LAYER (jangan ubah kecuali paham compositing)
+──────────────────────────────────────────────────────────────
+
+  Belakang → depan:
+  background → skin → clothes → glasses → hat → sticker
+
+  (lihat MAGIC_LAYER_ORDER di src/types/magicLab.ts)

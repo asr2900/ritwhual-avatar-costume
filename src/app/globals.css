@@ -168,24 +168,104 @@ body {
   box-shadow: 0 0 60px rgba(149, 255, 170, 0.15);
 }
 
-.magic-lab-tabs {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.magic-lab-workspace {
+  align-items: stretch;
 }
 
-.magic-lab-tabs::-webkit-scrollbar {
-  display: none;
+.magic-lab-preview-wrap {
+  align-self: center;
 }
 
-.magic-lab-tab {
+@media (min-width: 1024px) {
+  .magic-lab-preview-wrap {
+    align-self: stretch;
+  }
+
+  .magic-lab-preview-wrap .magic-lab-preview {
+    height: 100%;
+    max-height: 360px;
+  }
+}
+
+/* Tab kategori — kolom vertikal di samping preview */
+.magic-lab-tabs-vertical {
+  width: 5.5rem;
+}
+
+@media (min-width: 640px) {
+  .magic-lab-tabs-vertical {
+    width: 6.75rem;
+  }
+}
+
+.magic-lab-tab-v {
   font-family: var(--font-body);
-  border-bottom: 2px solid transparent;
-  border-radius: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  color: #b7f5c8;
+  transition: all 0.2s;
+  line-height: 1.3;
+  word-break: break-word;
 }
 
-.magic-lab-tab--active {
-  border-bottom-color: #95ff9a;
-  background: rgba(149, 255, 154, 0.08);
+@media (min-width: 640px) {
+  .magic-lab-tab-v {
+    font-size: 0.7rem;
+    padding: 0.55rem 0.5rem;
+  }
+}
+
+.magic-lab-tab-v:hover {
+  color: #e8ffef;
+  background: rgba(149, 255, 154, 0.06);
+}
+
+.magic-lab-tab-v--active {
+  color: #061a10;
+  background: #95ff9a;
+  border-color: #b8ffb8;
+  box-shadow: 0 0 12px rgba(149, 255, 154, 0.3);
+}
+
+/* Daftar thumbnail — scroll vertikal + scrollbar kanan */
+.magic-lab-options-scroll {
+  max-height: 280px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-left: 1px solid rgba(149, 255, 154, 0.2);
+  padding-left: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: #52b788 rgba(6, 26, 16, 0.4);
+}
+
+@media (min-width: 640px) {
+  .magic-lab-options-scroll {
+    max-height: 320px;
+    padding-left: 1rem;
+  }
+}
+
+.magic-lab-options-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.magic-lab-options-scroll::-webkit-scrollbar-track {
+  background: rgba(6, 26, 16, 0.45);
+  border-radius: 999px;
+}
+
+.magic-lab-options-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #95ff9a, #52b788);
+  border-radius: 999px;
+}
+
+.magic-lab-options-scroll::-webkit-scrollbar-thumb:hover {
+  background: #b8ffb8;
 }
 
 .magic-lab-option {
@@ -195,13 +275,26 @@ body {
   cursor: pointer;
 }
 
+.magic-lab-option--row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  transition: background 0.2s;
+}
+
+.magic-lab-option--row:hover {
+  background: rgba(149, 255, 154, 0.06);
+}
+
 .magic-lab-option__frame {
   border-color: rgba(149, 255, 154, 0.25);
   background: rgba(6, 26, 16, 0.5);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.magic-lab-option:hover .magic-lab-option__frame {
+.magic-lab-option--row:hover .magic-lab-option__frame {
   border-color: rgba(149, 255, 154, 0.55);
 }
 
@@ -212,6 +305,7 @@ body {
 
 .magic-lab-option--selected .magic-lab-option__label {
   color: #95ff9a;
+  font-weight: 600;
 }
 
 @keyframes ritual-float {

@@ -21,9 +21,9 @@ export function MagicLabEditor({
   const items = MAGIC_LAB_CATALOG[activeTab];
 
   return (
-    <div className="magic-lab-editor w-full">
+    <div className="magic-lab-editor flex min-h-0 flex-1 gap-3 sm:gap-4">
       <nav
-        className="magic-lab-tabs flex gap-1 overflow-x-auto pb-1 scrollbar-hide sm:justify-center"
+        className="magic-lab-tabs-vertical flex shrink-0 flex-col gap-1"
         aria-label="Layer categories"
       >
         {MAGIC_TAB_ORDER.map((tab) => {
@@ -33,11 +33,7 @@ export function MagicLabEditor({
               key={tab}
               type="button"
               onClick={() => onTabChange(tab)}
-              className={`magic-lab-tab shrink-0 px-3 py-2 text-xs font-bold uppercase tracking-wider transition-all sm:px-4 sm:text-[11px] ${
-                active
-                  ? "magic-lab-tab--active text-ritual-accentDeep"
-                  : "text-ritual-muted hover:text-ritual-text"
-              }`}
+              className={`magic-lab-tab-v text-left ${active ? "magic-lab-tab-v--active" : ""}`}
             >
               {MAGIC_LAYER_LABELS[tab]}
             </button>
@@ -45,41 +41,43 @@ export function MagicLabEditor({
         })}
       </nav>
 
-      <div className="magic-lab-options mt-4 flex justify-center gap-3 overflow-x-auto px-2 pb-2 sm:gap-4">
-        {items.map((item) => {
-          const selected = selection[activeTab] === item.id;
-          const isNone = isNoneLayer(activeTab, item.id);
+      <div className="magic-lab-options-scroll min-h-0 flex-1">
+        <div className="magic-lab-options-inner flex flex-col gap-3 pr-1">
+          {items.map((item) => {
+            const selected = selection[activeTab] === item.id;
+            const isNone = isNoneLayer(activeTab, item.id);
 
-          return (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => onSelect(activeTab, item.id)}
-              title={item.label}
-              className={`magic-lab-option group shrink-0 ${selected ? "magic-lab-option--selected" : ""}`}
-            >
-              <span className="magic-lab-option__frame relative block h-16 w-16 overflow-hidden rounded-xl border-2 sm:h-20 sm:w-20">
-                {isNone ? (
-                  <span className="flex h-full w-full items-center justify-center bg-ritual-panel/80 text-lg text-ritual-muted">
-                    ∅
-                  </span>
-                ) : (
-                  <Image
-                    src={item.src}
-                    alt={item.label}
-                    fill
-                    className="object-cover transition-transform group-hover:scale-105"
-                    sizes="80px"
-                    unoptimized
-                  />
-                )}
-              </span>
-              <span className="magic-lab-option__label mt-1.5 block max-w-[4.5rem] truncate text-center text-[10px] text-ritual-muted">
-                {item.label}
-              </span>
-            </button>
-          );
-        })}
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => onSelect(activeTab, item.id)}
+                title={item.label}
+                className={`magic-lab-option magic-lab-option--row group w-full ${selected ? "magic-lab-option--selected" : ""}`}
+              >
+                <span className="magic-lab-option__frame relative block h-14 w-14 shrink-0 overflow-hidden rounded-xl border-2 sm:h-16 sm:w-16">
+                  {isNone ? (
+                    <span className="flex h-full w-full items-center justify-center bg-ritual-panel/80 text-base text-ritual-muted">
+                      ∅
+                    </span>
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={item.label}
+                      fill
+                      className="object-cover transition-transform group-hover:scale-105"
+                      sizes="64px"
+                      unoptimized
+                    />
+                  )}
+                </span>
+                <span className="magic-lab-option__label text-left text-xs text-ritual-muted sm:text-sm">
+                  {item.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

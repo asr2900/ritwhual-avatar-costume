@@ -52,7 +52,7 @@ export function CreateMagicSection() {
   );
 
   return (
-    <section id="create-magic" className="mx-auto max-w-3xl px-6 py-24">
+    <section id="create-magic" className="mx-auto max-w-5xl px-6 py-24">
       <div className="text-center">
         <h2 className="text-title text-3xl sm:text-4xl">
           {CREATE_MAGIC.sectionTitle}
@@ -62,19 +62,27 @@ export function CreateMagicSection() {
         </p>
       </div>
 
-      <div className="magic-lab-panel panel-glass mx-auto mt-10 max-w-lg rounded-3xl p-5 sm:p-8">
-        <MagicLabPreview selection={selection} className="mx-auto max-w-xs sm:max-w-sm" />
+      <div className="magic-lab-panel panel-glass mx-auto mt-10 rounded-3xl p-5 sm:p-8">
+        <div className="magic-lab-workspace flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-8">
+          <div className="magic-lab-preview-wrap flex shrink-0 justify-center lg:w-[min(100%,320px)]">
+            <MagicLabPreview
+              selection={selection}
+              className="w-full max-w-[280px] sm:max-w-[320px] lg:max-w-none"
+            />
+          </div>
 
-        <div className="mt-8 border-t border-ritual-accent/20 pt-6">
-          <MagicLabEditor
-            activeTab={activeTab}
-            onTabChange={setActiveTab}
-            selection={selection}
-            onSelect={handleSelect}
-          />
+          <div className="magic-lab-side flex min-h-[280px] min-w-0 flex-1 flex-col sm:min-h-[320px]">
+            <p className="text-section-label mb-3 hidden sm:block">Parts</p>
+            <MagicLabEditor
+              activeTab={activeTab}
+              onTabChange={setActiveTab}
+              selection={selection}
+              onSelect={handleSelect}
+            />
+          </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <div className="mt-8 flex flex-wrap justify-center gap-3 border-t border-ritual-accent/20 pt-8">
           <button
             type="button"
             onClick={handleRandomise}
