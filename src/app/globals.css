@@ -131,6 +131,39 @@ body {
   box-shadow: 0 0 40px rgba(149, 255, 170, 0.12);
 }
 
+.magic-lab-btn {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.7rem;
+  transition: all 0.2s;
+}
+
+.magic-lab-btn--primary {
+  background: #95ff9a;
+  color: #061a10;
+  border: 2px solid #b8ffb8;
+  box-shadow: 0 0 24px rgba(149, 255, 154, 0.35);
+}
+
+.magic-lab-btn--primary:hover:not(:disabled) {
+  transform: scale(1.03);
+  background: #b8ffb8;
+}
+
+.magic-lab-btn--ghost {
+  background: transparent;
+  color: #95ff9a;
+  border: 2px solid rgba(149, 255, 154, 0.5);
+}
+
+.magic-lab-btn--ghost:hover {
+  background: rgba(149, 255, 154, 0.1);
+}
+
 @keyframes ritual-float {
   0%,
   100% {

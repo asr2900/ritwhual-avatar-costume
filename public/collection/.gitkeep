@@ -1,9 +1,0 @@
-# Taruh gambar NFT Anda di folder ini.
-# Nama file harus cocok dengan path di src/config/content.ts:
-#
-#   nft-01.png  →  /collection/nft-01.png
-#   nft-02.png  →  /collection/nft-02.png
-#   nft-03.png  →  /collection/nft-03.png
-#   nft-04.png  →  /collection/nft-04.png
-#
-# Format disarankan: PNG atau JPG, rasio 1:1 (persegi).

@@ -1,6 +1,6 @@
 import { AppShell } from "./AppShell";
 import { AboutSection } from "./sections/AboutSection";
-import { CollectionSection } from "./sections/CollectionSection";
+import { CreateMagicSection } from "./sections/CreateMagicSection";
 import { CommunitySection } from "./sections/CommunitySection";
 import { HeroSection } from "./sections/HeroSection";
 import { SITE } from "@/config/site";
@@ -10,7 +10,7 @@ export function LandingPage() {
     <AppShell>
       <HeroSection />
       <AboutSection />
-      <CollectionSection />
+      <CreateMagicSection />
       <CommunitySection />
       <footer className="border-t border-ritual-accent/20 px-6 py-8 text-center">
         <p className="text-subtitle text-xs opacity-60">

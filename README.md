@@ -1,48 +1,44 @@
 # CokkaNFT
 
-Landing page untuk proyek **CokkaNFT** — tema magic · cute · absurd · green. Siap deploy ke [Vercel](https://vercel.com).
+Landing page + **Create Your Magic** lab (layer mixer, inspired by Driplab).
 
-## Struktur halaman
+## Struktur folder
 
-1. **CokkaNFT** — logo, nama, tagline, Follow on X
-2. **ABOUT** — What Is Cokka, Why Was it Created, Visi
-3. **Collection Preview** — 4 karya NFT
-4. **Community** — tombol follow ke X
-
-## Mengisi konten secara manual
-
-### ABOUT
-
-Edit file **`src/config/content.ts`**, bagian `ABOUT.blocks`:
-
-```ts
-{
-  heading: "What Is Cokka",
-  body: "Tulis paragraf Anda di sini...",
-},
+```
+ritwhual-avatar-costume/
+├── public/
+│   ├── brand/
+│   │   └── logo.png              ← logo proyek
+│   ├── magic-lab/
+│   │   └── layers/               ← layer untuk Create Your Magic
+│   │       ├── background/
+│   │       ├── skin/
+│   │       ├── clothes/
+│   │       ├── hair/
+│   │       └── accessory/
+│   └── showcase/                 ← karya NFT lengkap (arsip, opsional)
+│       └── nft-01.png … nft-04.png
+├── src/
+│   ├── config/
+│   │   ├── site.ts               ← nama, tagline, link X
+│   │   ├── content.ts            ← ABOUT, teks section
+│   │   └── magicLab.ts           ← daftar layer + path file
+│   ├── components/
+│   │   ├── sections/             ← Hero, About, Create Magic, Community
+│   │   └── magic-lab/            ← preview composer
+│   └── lib/
+│       └── composeMagic.ts         ← export PNG
 ```
 
-Ulangi untuk `Why Was it Created` dan `Visi`.
+## Mengisi layer (Create Your Magic)
 
-### Collection (4 NFT)
+1. Taruh PNG/SVG **1024×1024** di `public/magic-lab/layers/<kategori>/`
+2. Edit `src/config/magicLab.ts` — tambah/ubah entri `MAGIC_LAB_CATALOG`
+3. Refresh browser
 
-1. Simpan gambar di **`public/collection/`**  
-   Contoh: `nft-01.png`, `nft-02.png`, …
-2. Di **`src/config/content.ts`**, sesuaikan `COLLECTION.items`:
+## Mengisi ABOUT
 
-```ts
-{
-  id: "nft-01",
-  title: "Judul karya",
-  description: "Deskripsi singkat",
-  image: "/collection/nft-01.png",
-},
-```
-
-### Logo & link X
-
-- Logo: ganti file **`public/logo.png`**
-- Link X: edit **`src/config/site.ts`** (`twitterUrl`, `twitterHandle`)
+Edit `src/config/content.ts` → `ABOUT.blocks`
 
 ## Development
 
@@ -51,6 +47,6 @@ npm install
 npm run dev
 ```
 
-## Deploy Vercel
+## Deploy
 
-Import repo GitHub → deploy. Framework: Next.js.
+Vercel — import repo GitHub, framework Next.js.

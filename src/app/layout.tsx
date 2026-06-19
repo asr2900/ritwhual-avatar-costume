@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CokkaNFT",
     description: "Your Digital Identity, Your Magic.",
-    images: ["/logo.png"],
+    images: ["/brand/logo.png"],
   },
 };
 
